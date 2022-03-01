@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Services from './Services';
+import Dashboard from './Dashboard';
+import Posts from './Posts';
+import Error from './Error';
+import Navbar from './Navbar';
 
-function App() {
+export default function App() {
+  const isLoggedIn = true;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+
+        {/* passing props into About component */}
+        <Route path='/about' element={<About text="Passing props into component" />} />
+
+        <Route path='/services' element={<Services />} />
+
+        {/* dynamic route */}
+        <Route path='/posts/:category/:topic' element={<Posts />} />
+
+        {/* Redirect or nevigate component */}
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/login' element={isLoggedIn ? <Navigate to="/dashboard" /> : <Home />} />
+
+        {/* error message */}
+        <Route path='*' element={<Error />} />
+      </Routes>
+    </Router>
+
+  )
 }
 
-export default App;
