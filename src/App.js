@@ -13,26 +13,27 @@ export default function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<Home />} />
 
-        {/* passing props into About component */}
-        <Route path='/about' element={<About text="Passing props into component" />} />
+          {/* passing props into About component */}
+          <Route path='/about' element={<About text="Passing props into component" />} />
 
-        <Route path='/services' element={<Services />} />
+          <Route path='/services' element={<Services />} />
 
-        {/* dynamic route */}
-        <Route path='/posts/:category/:topic' element={<Posts />} />
+          {/* dynamic route */}
+          <Route path='/posts/:category/:topic' element={<Posts />} />
 
-        {/* Redirect or nevigate component */}
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/login' element={isLoggedIn ? <Navigate to="/dashboard" /> : <Home />} />
+          {/* Redirect or nevigate component */}
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/login' element={isLoggedIn ? <Navigate to="/dashboard" /> : <Home />} />
 
-        {/* error message */}
-        <Route path='*' element={<Error />} />
-      </Routes>
+          {/* error message */}
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </div>
     </Router>
-
   )
 }
 

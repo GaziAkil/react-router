@@ -6,7 +6,7 @@ export default function Posts() {
 const parameter = useParams(); // const {category, topic} = useParams();
   return (
     <div>
-      <h2>Dynamic post page: [Category: { parameter.category } | Topic: { parameter.topic }]</h2>
+      <h4>Dynamic post page: [Category: { parameter.category } | Topic: { parameter.topic }]</h4>
     </div>
   )
 }
