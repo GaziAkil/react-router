@@ -18,7 +18,7 @@ export default function App() {
           <Route path='/' element={<Home />} />
 
           {/* passing props into About component */}
-          <Route path='/about' element={<About text="Passing props into component" />} />
+          <Route path='/about' element={<About message="Passing props into component" />} />
 
           <Route path='/services' element={<Services />} />
 

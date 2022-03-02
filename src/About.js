@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function About({text}) {
+export default function About({message}) {
   return (
     <div>
-      <h4>About page - {text}</h4>
+      <h4>About page - { message }</h4>
     </div>
   )
 }
