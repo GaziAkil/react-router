@@ -25,7 +25,7 @@ export default function Navbar() {
                     </li>
                 </ul>
                 <form className="d-flex">
-                    <Link className="btn btn-success" type="submit" to="/login">LogIn</Link>
+                    <Link className="btn btn-primary" type="submit" to="/login">LogIn</Link>
                 </form>
             </div>
         </div>
