@@ -9,6 +9,7 @@ import Error from './Error';
 import Navbar from './Navbar';
 
 export default function App() {
+  
   const isLoggedIn = true;
   return (
     <Router>
@@ -17,7 +18,7 @@ export default function App() {
         <Routes>
           <Route path='/' element={<Home />} />
 
-          {/* passing props into About component */}
+          {/* passing props to About component */}
           <Route path='/about' element={<About message="Passing props into component" />} />
 
           <Route path='/services' element={<Services />} />
